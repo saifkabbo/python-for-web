@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<h2>Hello, {{ name }}!</h2>
+
+<p>My age is {{ age }}</p>
+
+{% if age >= 18 %}
+    <p>You are an adult.</p>
+{% else %}
+    <p>You are a minor.</p>
+{% endif %}
+
+<h2>Programming Languages</h2>
+
+<ul>
+    {% for language in languages %}
+        <li>{{ language }}</li>
+    {% endfor %}
+</ul>
+{% if text %}
+    <h2>Your submitted text:</h2>
+    <p>{{ text }}</p>
+{% endif %}
+
+{% endblock %}

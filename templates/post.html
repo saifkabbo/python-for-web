@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>Text Analyzer</h1>
+
+<form action="{{ url_for('post') }}" method="POST">
+    <label for="text">Enter your text:</label>
+    <br><br>
+
+    <textarea name="text" id="text" rows="8" cols="50"
+        placeholder="Write something here..."></textarea>
+
+    <br><br>
+    <button type="submit">Analyze Text</button>
+</form>
+
+{% if text %}
+    <h2>Your submitted text:</h2>
+    <p>{{ text }}</p>
+
+    <h3>Word count: {{ word_count }}</h3>
+    <h3>Character count: {{ character_count }}</h3>
+{% endif %}
+{% endblock %}
